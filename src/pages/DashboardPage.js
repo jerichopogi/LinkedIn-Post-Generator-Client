@@ -24,7 +24,7 @@ const DashboardPage = () => {
   useEffect(() => {
     const checkScanStatus = async () => {
       try {
-        const response = await fetch('http://localhost:5001/check-scan');
+        const response = await fetch('https://linked-in-post-generator-server.vercel.app/check-scan');
         const data = await response.json();
         if (!data.scanDone) {
           setScanning(true);
@@ -54,7 +54,7 @@ const DashboardPage = () => {
     setValidationStatus(null);
 
     try {
-      const response = await fetch('http://localhost:5001/validate-feed', {
+      const response = await fetch('https://linked-in-post-generator-server.vercel.app/validate-feed', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -106,7 +106,7 @@ const DashboardPage = () => {
       console.log('Fetching articles with feed URLs:', feedUrls); // Debug log
       console.log('Using OpenAI context:', openAIContext); // Debug log
   
-      const response = await fetch('http://localhost:5001/fetch-articles', {
+      const response = await fetch('https://linked-in-post-generator-server.vercel.app/fetch-articles', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

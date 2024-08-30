@@ -41,7 +41,7 @@ const AdminPanel = () => {
       console.log('Attempting to delete user with ID:', userId); // Log user ID
   
       // Call the server-side API to delete the user
-      const response = await fetch(`http://localhost:5001/delete-user/${userId}`, {
+      const response = await fetch(`https://linked-in-post-generator-server.vercel.app/delete-user/${userId}`, {
         method: 'DELETE',
       });
   
